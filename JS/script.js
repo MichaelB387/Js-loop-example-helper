@@ -31,11 +31,15 @@ for (let i = 0; i <IMAGES.length; i++) {
     //eg original image was example-800.jpg now is just example
     imgSrc = imgSrc.slice(0,-8)
     let srcset = makeSrcSet(imgSrc)
+    //Populate Attributes for each image
+    IMAGES[i].setAttribute("srcset",srcset)
     console.log(srcset)
 
     let type = IMAGES[i].getAttribute("data-type")
     //bracket notation
     let sizes = SIZES[type]
+    //adds attribute
+    IMAGES[i].setAttribute("sizes",sizes)    
     console.log(sizes)
 }
 
